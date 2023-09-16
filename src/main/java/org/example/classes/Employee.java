@@ -25,4 +25,9 @@ public  class Employee {
     public void increaseSalary(int salary) {
         this.salary += salary;
     }
+
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+    }
 }

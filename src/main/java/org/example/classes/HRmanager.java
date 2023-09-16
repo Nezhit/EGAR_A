@@ -24,4 +24,16 @@ public class HRmanager implements IManage {
         }
 
     }
+
+    public HRmanager(ArrayList<Director> employees) {
+        this.employees = employees;
+    }
+
+    public void setEmployees(ArrayList<Director> employees) {
+        this.employees = employees;
+    }
+
+    public ArrayList<Director> getEmployees() {
+        return employees;
+    }
 }

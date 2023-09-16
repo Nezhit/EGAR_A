@@ -7,9 +7,17 @@ import java.util.ArrayList;
 public class Director extends Employee{
     ArrayList<Programmer> subordinates;
     @Override
-    public void work(){
-        for(Programmer concrete:subordinates){
-            concrete.increaseSalary(300);
+    public void work() {
+        try {
+            if (subordinates != null) {
+                for (Programmer concrete : subordinates) {
+                    concrete.increaseSalary(300);
+                }
+            } else {
+                System.out.println("No subordinates to work with.");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException: " + e.getMessage());
         }
     }
     public double calculateSickLeavePercentage() {
@@ -28,9 +36,30 @@ public class Director extends Employee{
         return (double) sickSubordinates / totalSubordinates * 100;
     }
 
-    public void work(int x){
-        for(Programmer concrete:subordinates){
-            concrete.increaseSalary(x);
+    public void work(int x) {
+        try {
+            if (subordinates != null) {
+                for (Programmer concrete : subordinates) {
+                    concrete.increaseSalary(x);
+                }
+            } else {
+                System.out.println("No subordinates to work with.");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException: " + e.getMessage());
         }
+    }
+
+    public ArrayList<Programmer> getSubordinates() {
+        return subordinates;
+    }
+
+    public void setSubordinates(ArrayList<Programmer> subordinates) {
+        this.subordinates = subordinates;
+    }
+
+    public Director(ArrayList<Programmer> subordinates,String name,int x) {
+        super(name,x);
+        this.subordinates = subordinates;
     }
 }

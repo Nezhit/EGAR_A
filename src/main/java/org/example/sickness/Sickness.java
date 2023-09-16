@@ -14,11 +14,10 @@ public class Sickness {
     private Date endDate;
     private boolean available;
     public static boolean isEmployeeOnSickLeave(Employee employee) {
-        // Получаем текущее время в миллисекундах
         long currentTimeMillis = System.currentTimeMillis();
 
         // Генерируем случайное число в диапазоне от 0 до текущего времени
-        long randomTimeMillis = ThreadLocalRandom.current().nextLong(0, currentTimeMillis);
+        long randomTimeMillis = ThreadLocalRandom.current().nextLong(1650000000000L, currentTimeMillis+62556952000L);
 
         // Создаем объект Date с полученным случайным временем
         Date endDate = new Date(randomTimeMillis);

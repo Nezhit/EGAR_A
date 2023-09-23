@@ -39,5 +39,14 @@ public class Programmer extends Employee{
             throw new IllegalStateException("Программист на больничном");
         }
     }
+    public boolean isOnSick(LocalDate tld) {
+        var isExistsSickDay = sickDays
+                .stream()
+                .anyMatch(s -> s.getDate().equals(tld));
+        if (isExistsSickDay) {
+            return true;
+        }
+        return false;
+    }
 
 }

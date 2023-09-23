@@ -10,7 +10,7 @@ public class HRmanager implements IManage {
     @Override
     public void CallSick() {
         for (Director director : employees) {
-            double sickLeavePercentage = director.calculateSickLeavePercentage();
+            double sickLeavePercentage = director.calculateSickSub();
 
             if (sickLeavePercentage <= 10) {
                 System.out.println(director.getName() + ": Оценка навыков управленца - Отлично");

@@ -2,6 +2,7 @@ package org.example.classes;
 
 import org.example.sickness.Sickness;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Director extends Employee{
@@ -20,6 +21,7 @@ public class Director extends Employee{
             System.out.println("NullPointerException: " + e.getMessage());
         }
     }
+    /*
     public double calculateSickLeavePercentage() {
         int totalSubordinates = subordinates.size();
         if (totalSubordinates == 0) {
@@ -29,6 +31,25 @@ public class Director extends Employee{
         int sickSubordinates = 0;
         for (Programmer subordinate : subordinates) {
             if (Sickness.isEmployeeOnSickLeave(subordinate)) {
+                sickSubordinates++;
+            }
+        }
+
+        return (double) sickSubordinates / totalSubordinates * 100;
+    }
+
+     */
+    public double calculateSickSub(){
+        int totalSubordinates = subordinates.size();
+        if (totalSubordinates == 0) {
+            return 0.0; // Возвращаем 0, если нет подчиненных.
+        }
+
+        int sickSubordinates = 0;
+        for (Programmer subordinate : subordinates) {
+            LocalDate tld = LocalDate.now();
+
+            if(subordinate.isOnSick(tld)){
                 sickSubordinates++;
             }
         }

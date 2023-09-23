@@ -10,9 +10,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Sickness {
 
     private Employee employee;
-    private LocalDate startDate;
-    private Date endDate;
-    private boolean available;
+    private LocalDate date;
+
+
     public static boolean isEmployeeOnSickLeave(Employee employee) {
         long currentTimeMillis = System.currentTimeMillis();
 
@@ -29,11 +29,14 @@ public class Sickness {
         }
         return false; // Если endDate равно null, сотрудник не на больничном.
     }
-    public Sickness(Employee employee, LocalDate startDate, Date endDate, boolean available) {
+
+    public Sickness(LocalDate date) {
+        this.date = date;
+    }
+
+    public Sickness(Employee employee, LocalDate date) {
         this.employee = employee;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.available = available;
+        this.date = date;
     }
 
     public Employee getEmployee() {
@@ -44,27 +47,11 @@ public class Sickness {
         this.employee = employee;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

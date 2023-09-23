@@ -5,7 +5,7 @@ import org.example.interfaces.IManage;
 import java.util.ArrayList;
 
 public class HRmanager implements IManage {
-    private ArrayList<Director> employees = new ArrayList<>();
+    private ArrayList<Director> employees ;
 
     @Override
     public void CallSick() {

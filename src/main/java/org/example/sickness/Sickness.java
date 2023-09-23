@@ -12,7 +12,7 @@ public class Sickness {
     private Employee employee;
     private LocalDate date;
 
-
+    /*
     public static boolean isEmployeeOnSickLeave(Employee employee) {
         long currentTimeMillis = System.currentTimeMillis();
 
@@ -29,6 +29,8 @@ public class Sickness {
         }
         return false; // Если endDate равно null, сотрудник не на больничном.
     }
+
+     */
 
     public Sickness(LocalDate date) {
         this.date = date;
